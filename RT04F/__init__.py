@@ -65,11 +65,11 @@ class RT04FSpeakerDiarizationProtocol(SpeakerDiarizationProtocol):
         data_dir = op.join(op.dirname(op.realpath(__file__)), 'data')
         
 
-        path = op.join(data_dir, '{protocol}-{subset}-en.uem'.format(subset=subset, protocol=protocol))
+        path = op.join(data_dir, '{protocol}-{subset}-en.scoring.uem'.format(subset=subset, protocol=protocol))
         uems = self.uem_parser_.read(path)
 
         # load annotations
-        path = op.join(data_dir, '{protocol}-{subset}-en.scoring.mdtm'.format(subset=subset, protocol=protocol))
+        path = op.join(data_dir, '{protocol}-{subset}-en.mdtm'.format(subset=subset, protocol=protocol))
         mdtms = self.mdtm_parser_.read(path)
 
         for uri in sorted(mdtms.uris):
