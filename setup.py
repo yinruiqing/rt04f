@@ -32,10 +32,10 @@ from setuptools import setup, find_packages
 
 setup(
     # replace "mydatabase" by the name of your database
-    name='pyannote.db.rtO4f',
+    name='pyannote.db.rt04f',
 
     # replace "MyDatabase" by the name of your database
-    description="RTO4F plugin for pyannote-database",
+    description="RT04F plugin for pyannote-database",
 
     # replace with your information
     author='Hervé Bredin',
@@ -47,7 +47,7 @@ setup(
 
     # replace "MyDatabase" by the new name of MyDatabase directory
     package_data={
-        'RTO4F': [
+        'RT04F': [
             'data/*',
         ],
     },
@@ -71,6 +71,6 @@ setup(
     # replace MyDatabase by the name of your database (using CamelCase)
     entry_points="""
         [pyannote.database.databases]
-        RTO4F=RTO4F:RTO4F
+        RT04F=RT04F:RT04F
     """
 )

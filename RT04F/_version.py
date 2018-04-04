@@ -43,9 +43,9 @@ def get_config():
     cfg.style = "pep440"
     cfg.tag_prefix = ""
     # replace mydatabase the same way you did in "setup.py"
-    cfg.parentdir_prefix = "pyannote-db-rtO4f-"
+    cfg.parentdir_prefix = "pyannote-db-rt04f-"
     # replace MyDatabase the same way you did in "setup.py"
-    cfg.versionfile_source = "RTO4F/_version.py"
+    cfg.versionfile_source = "RT04F/_version.py"
     cfg.verbose = False
     return cfg
 

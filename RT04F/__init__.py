@@ -42,7 +42,7 @@ from itertools import chain
 # this protocol defines a speaker diarization protocol: as such, a few methods
 # needs to be defined: trn_iter, dev_iter, and tst_iter.
 
-class RTO4FSpeakerDiarizationProtocol(SpeakerDiarizationProtocol):
+class RT04FSpeakerDiarizationProtocol(SpeakerDiarizationProtocol):
     """Base speaker diarization protocol for ETAPE database
     This class should be inherited from, not used directly.
     Parameters
@@ -55,7 +55,7 @@ class RTO4FSpeakerDiarizationProtocol(SpeakerDiarizationProtocol):
     """
 
     def __init__(self, preprocessors={}, **kwargs):
-        super(RTO4FSpeakerDiarizationProtocol, self).__init__(
+        super(RT04FSpeakerDiarizationProtocol, self).__init__(
             preprocessors=preprocessors, **kwargs)
         self.uem_parser_ = UEMParser()
         self.mdtm_parser_ = MDTMParser()
@@ -76,14 +76,14 @@ class RTO4FSpeakerDiarizationProtocol(SpeakerDiarizationProtocol):
             annotated = uems(uri)
             annotation = mdtms(uri)
             current_file = {
-                'database': protocol,
+                'database': 'RT04F',
                 'uri': uri,
                 'annotated': annotated,
                 'annotation': annotation}
             yield current_file
 
 
-class TV(RTO4FSpeakerDiarizationProtocol):
+class TV(RT04FSpeakerDiarizationProtocol):
     """My first speaker diarization protocol """
 
     def trn_iter(self):
@@ -97,11 +97,11 @@ class TV(RTO4FSpeakerDiarizationProtocol):
 # this is where we define each protocol for this database.
 # without this, `pyannote.database.get_protocol` won't be able to find them...
 
-class RTO4F(Database):
+class RT04F(Database):
     """MyDatabase database"""
 
     def __init__(self, preprocessors={}, **kwargs):
-        super(RTO4F, self).__init__(preprocessors=preprocessors, **kwargs)
+        super(RT04F, self).__init__(preprocessors=preprocessors, **kwargs)
 
         # register the first protocol: it will be known as
         # MyDatabase.SpeakerDiarization.MyFirstProtocol
